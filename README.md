@@ -36,19 +36,27 @@ The script (run_analysis.R) performs the following steps to fulfill the requirem
 9. Groups and summarises the data by subject and activity
 10. outputs the tidy data to the tidydata.txt file
 
-Step 1: Getting the data and merging the training and the test sets to create one data set:
+Step 1: Getting the data and merging the training and the test sets to create one data set
 
 The run_analysis.R script starts by creating a relative location ("./data") to download the zip archive to, then downloads it from the UCI website (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) using download file(). The date  of the download is captured with date() and outputed to the console. The zipped fileset is then extracted to a sub directory (./data/unzipped) using unzip().
 
 The individual files subject_test.txt, subject_train.txt, X_test.txt, X_train.txt, y_test.txt, y_train.txt, features.txt and activity_labels.txt are read into individual dataframes using read.table(). Each of the test and train dataframes are combined using rbind.data.frame() and then the appropriate column headings are added to each of the activity, subject and sensor dataframes using names(). The three dataframes are then combined into a single dataframe called rawData using cbind.data.frame() to create the merged dataset.
 
-Step 2: Extracts only the measurements on the mean and standard deviation for each measurement:
+Step 2: Extracts only the measurements on the mean and standard deviation for each measurement
 
 The run_analysis.R script takes the rawData dataframe and uses colnames() and grep() to extract the columns with Mean or mean or Std or std in the variable name. [see line 48 of the script] and writes them to a new dataframe called procData.
 
-Step 3: Uses descriptive activity names to name the activities in the data set:
+Step 3: Uses descriptive activity names to name the activities in the data set
 
 The run_analysis.R script takes the activity_names dataframe, extracts the activity names, converts them to lower case using tolower() and removes underscores using sub(). It then inserts this into the prodData dataframe in the activity column to convert the activity from an number (e.g. 1) to the description of the activity (e.g. walking).
+
+Step 4: Appropriately labels the data set with descriptive variable names
+
+This step required some assumptions to be made. The original variable names were confusing and made little sense to someone unfamiliar with this specialist area of research. To completely expand the variable name into a fully descrpitive name would make some of the names extremely unweildy (e.g. Time domain body accelerometer jerk magnitude standard deviation). So the author decided to tidy the variable names to a certain level such that they were tidy but still reasonably meaningful.
+
+The script uses make.names() to ensure the variable names are unique and remove underscores.
+
+Step 5: 
 
 
 #Output
