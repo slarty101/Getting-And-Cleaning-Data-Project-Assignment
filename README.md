@@ -56,10 +56,24 @@ This step required some assumptions to be made. The original variable names were
 
 The script uses make.names() to ensure the variable names are unique and remove underscores.
 
-Step 5: 
+Step 5: Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
+The run_analysis.R script uses the dplyr package functions group_by() and summarise_each() to group the activity by subject and calcualte the mean for each activity for each subject into a new dataframe finalData.  
 
 #Output
 
+The run_analysis.R script use write.table() to output the finalData dataframe to a text file (tidydata.txt) in the (./data) directory.
+
+The user can read this tidy data back into R after running the run_analysis.R script using the following:
+
+data <- read.table("./data/tidydata.txt", header=TRUE)
+
 #Codebook link
 https://github.com/slarty101/Getting-And-Cleaning-Data-Project-Assignment/blob/master/codebook.md
+
+#Notes
+
+The run_analysis.R script was developed and tested on Windows 7 64 using R version 3.2.1 and RStudio Version 0.99.473
+Use on other platforms may require the script to be modified.
+
+The run_analysis.R script uses the dplyr library, this package will need to be installed if not already present on the users system.
