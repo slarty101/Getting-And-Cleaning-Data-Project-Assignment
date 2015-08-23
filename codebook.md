@@ -49,7 +49,8 @@ The script (run_analysis.R) performs the following steps:
 10. outputs the tidy data to the tidydata.txt file
 
 The readme provides full details of the processing steps. 
-[link to the readme document that describes the code in greater detail]()
+https://github.com/slarty101/Getting-And-Cleaning-Data-Project-Assignment/blob/master/README.md
+
 
 ##Description of the variables in the tidy_data.txt file
 The tidy data output file (tidydata.txt) contains the following dataset;
