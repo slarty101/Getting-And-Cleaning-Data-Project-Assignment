@@ -74,6 +74,7 @@ https://github.com/slarty101/Getting-And-Cleaning-Data-Project-Assignment/blob/m
 #Notes
 
 The run_analysis.R script was developed and tested on Windows 7 64 using R version 3.2.1 and RStudio Version 0.99.473
+
 Use on other platforms may require the script to be modified.
 
 The run_analysis.R script uses the dplyr library, this package will need to be installed if not already present on the users system.
