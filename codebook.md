@@ -52,7 +52,7 @@ The readme provides full details of the processing steps.
 https://github.com/slarty101/Getting-And-Cleaning-Data-Project-Assignment/blob/master/README.md
 
 
-##Description of the variables in the tidy_data.txt file
+##Description of the variables in the tidydata.txt file
 The tidy data output file (tidydata.txt) contains the following dataset;
  - a 88 column dataframe containing 180 rows of summarised data
  
